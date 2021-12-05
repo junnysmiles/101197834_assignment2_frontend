@@ -11,7 +11,7 @@ import Add from './components/add';
 import React, { Component } from 'react';
 import Update from './components/update';
 import View from './components/view';
-import AddEmployee from './components/add';
+import Delete from './components/delete';
 
 class App extends Component {
   render() {
@@ -47,21 +47,12 @@ class App extends Component {
             </Container>
           </Navbar>
           <Routes>
-            <Route path="/" exact component={List} />
-            <Route path="/add-employee" component={Add} />
+            <Route path="/" element={ <List /> } />
+            <Route path="/add-employee" element={ <Add /> } />
+            <Route path="/update-employee" element={ <Update /> } />
+            <Route path="/view-employee" element={ <View /> } />
+            <Route path="/delete-employee" element={ <Delete /> } />
           </Routes>
-      </div>
-      <div>
-        <List />
-      </div>
-      <div>
-        <Add />
-      </div>
-      <div>
-        <Update />
-      </div>
-      <div>
-        <View />
       </div>
     </Router>
     );

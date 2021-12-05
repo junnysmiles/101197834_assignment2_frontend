@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
 import { Button } from 'react-bootstrap'
 
 export default class View extends Component {
@@ -27,9 +28,11 @@ export default class View extends Component {
                     </h3>
                 </div>
                 <div className="text-center">
-                    <Button variant="danger" style={{marginTop:15}}>
-                        Back
-                    </Button>
+                    <Link to="/">
+                        <Button variant="danger" style={{marginTop:15}}>
+                            Back
+                        </Button>
+                    </Link>
                 </div>
             </div>
         )

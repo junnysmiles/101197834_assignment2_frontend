@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Form } from 'react-bootstrap'
+import { Link } from "react-router-dom";
+import axios from 'axios';
 
 export default class Add extends Component {
     
@@ -43,6 +45,17 @@ export default class Add extends Component {
         console.log(`First Name: ${this.state.firstName}`)
         console.log(`Last Name: ${this.state.lastName}`)
         console.log(`Email Id: ${this.state.emailId}`)
+
+        const newEmployee = {
+            firstName: this.state.firstName,
+            lastName: this.state.lastName,
+            emailId: this.state.emailId
+        }
+
+        axios.post('http://localhost:9090/cj3afRQe7ookTIlpi4oahqRohlvQe27vWBF2MYmW6E9jdVfBys1pX8CmLSQZ03zo/v1/employees', newEmployee)
+            .then(res => {
+                console.log(res.data)
+            });
 
         this.setState({
             firstName: '',
@@ -93,9 +106,14 @@ export default class Add extends Component {
                             Required
                         </Form.Text>
                     </Form.Group>
-                    <Button variant="info" type="submit">
+                    <Button variant="info" type="submit" style={{marginRight:12}}>
                         Submit
                     </Button>
+                    <Link to="/">
+                        <Button variant="danger">
+                            Cancel
+                        </Button>
+                    </Link>
                 </Form>
             </div>
         )

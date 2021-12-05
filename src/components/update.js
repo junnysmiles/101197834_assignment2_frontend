@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
 import { Button, Form } from 'react-bootstrap'
 
 export default class Update extends Component {
@@ -35,9 +36,11 @@ export default class Update extends Component {
                     <Button variant="info" type="submit" style={{marginRight:12}}>
                         Save
                     </Button>
-                    <Button variant="danger">
-                        Cancel
-                    </Button>
+                    <Link to="/">
+                        <Button variant="danger">
+                            Cancel
+                        </Button>
+                    </Link>
                 </Form>
             </div>
         )
