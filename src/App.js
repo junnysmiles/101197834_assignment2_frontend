@@ -1,23 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import 'react-bootstrap';
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import icon from './assets/employee-icon.png'
+import { Navbar, Container } from 'react-bootstrap'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navbar bg="dark" variant="dark">
+        <Container>
+          <Navbar.Brand href="#home">
+            <img
+              alt=""
+              src={icon}
+              width="30"
+              height="30"
+              className="d-inline-block align-top"
+            />{' '}
+          Employee Management App
+          </Navbar.Brand>
+        </Container>
+      </Navbar>
     </div>
   );
 }
