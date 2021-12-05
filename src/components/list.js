@@ -4,21 +4,17 @@ import 'react-bootstrap';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button } from 'react-bootstrap'
-import Add from './add.component'
-import Update from './update.component';
-import Delete from './delete.component';
-import View from './view.component';
+import Add from "./add";
 
 export default class List extends Component {
     render() {
         return (
-            <Router>
                 <div>
                     <div>
                         <h1 class="display-4 text-center my-5">Employees List</h1>
                     </div>
                     <div class="mx-5 mb-4">
-                        <Link to="/add">
+                        <Link to="/add-employee">
                             <Button variant="primary">Add Employee</Button>
                         </Link>
                     </div>
@@ -40,10 +36,10 @@ export default class List extends Component {
                                         <td>@mdo</td>
                                         <td class="mx-3">
                                             <Link to="/update/:id">
-                                                <Button variant="warning">Update</Button>
+                                                <Button variant="warning" style={{marginRight:12}}>Update</Button>
                                             </Link>
                                             <Link to="/view/:id">
-                                                <Button variant="info">View</Button>
+                                                <Button variant="info" style={{marginRight:12}}>View</Button>
                                             </Link>
                                             <Link to="/delete/:id">
                                                 <Button variant="danger">Delete</Button>
@@ -55,8 +51,8 @@ export default class List extends Component {
                                         <td>Thornton</td>
                                         <td>@fat</td>
                                         <td class="mx-3">
-                                            <Button variant="warning">Update</Button>
-                                            <Button variant="info">View</Button>
+                                            <Button variant="warning" style={{marginRight:12}}>Update</Button>
+                                            <Button variant="info" style={{marginRight:12}}>View</Button>
                                             <Button variant="danger">Delete</Button>
                                         </td>
                                     </tr>
@@ -65,23 +61,20 @@ export default class List extends Component {
                                         <td>Thornton</td>
                                         <td>@fat</td>
                                         <td class="mx-3">
-                                            <Button variant="warning">Update</Button>
-                                            <Button variant="info">View</Button>
+                                            <Button variant="warning" style={{marginRight:12}}>Update</Button>
+                                            <Button variant="info" style={{marginRight:12}}>View</Button>
                                             <Button variant="danger">Delete</Button>
                                         </td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
+                        <Routes>
+                            <Route path="/" exact component={List} />
+                            <Route path="/add-employee" component={Add} />
+                        </Routes>
                     </div>
-                    <Routes>
-                        <Route path="/add" exact component={Add} />
-                        <Route path="/update/:id" component={Update} />
-                        <Route path="/delete/:id" component={Delete} />
-                        <Route path="/view/:id" component={View} />
-                    </Routes>
                 </div>
-            </Router>
         )
     }
 }
