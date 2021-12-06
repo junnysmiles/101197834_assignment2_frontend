@@ -49,9 +49,9 @@ class App extends Component {
           <Routes>
             <Route path="/" element={ <List /> } />
             <Route path="/add-employee" element={ <Add /> } />
-            <Route path="/update-employee" element={ <Update /> } />
-            <Route path="/view-employee" element={ <View /> } />
-            <Route path="/delete-employee" element={ <Delete /> } />
+            <Route path="/update-employee/:id" element={ <Update /> } />
+            <Route path="/view-employee/:id" element={ <View /> } />
+            <Route path="/delete-employee/" element={ <Delete /> } />
           </Routes>
       </div>
     </Router>

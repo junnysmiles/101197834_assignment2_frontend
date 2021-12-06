@@ -52,7 +52,7 @@ export default class Add extends Component {
             emailId: this.state.emailId
         }
 
-        axios.post('http://localhost:9090/cj3afRQe7ookTIlpi4oahqRohlvQe27vWBF2MYmW6E9jdVfBys1pX8CmLSQZ03zo/v1/employees', newEmployee)
+        axios.post('http://localhost:9090/api/v1/employees', newEmployee)
             .then(res => {
                 console.log(res.data)
             });
@@ -111,7 +111,7 @@ export default class Add extends Component {
                     </Button>
                     <Link to="/">
                         <Button variant="danger">
-                            Cancel
+                            Back
                         </Button>
                     </Link>
                 </Form>
