@@ -5,35 +5,43 @@ import axios from 'axios'
 
 export default class View extends Component {
     
-    /*constructor(props) {
+    constructor(props) {
         super(props);
 
         this.state = {
-            employees: []
+            employees: {},
+            id: '',
+            firstName: '',
+            lastName: '',
+            emailId: ''
         }
     }
 
     componentDidMount() {
         axios.get('http://localhost:9090/api/v1/employees')
         .then(response => {
-            this.setState({employees: response.data})
+            this.setState({
+                employees: response.data,
+                id: this.state.id,
+            })
         })
         .catch(function(error) {
             console.log(error)
         })
 
-        axios.get('http://localhost:9090/api/v1/employees/'+this.props.match.params.id)
+        axios.get(`http://localhost:9090/api/v1/employees/${this.id}`)
             .then(response => {
-                this.setState({
+                this.setState({ 
                     firstName: response.data.firstName,
                     lastName: response.data.lastName,
                     emailId: response.data.emailId
                 })
+                console.log(response.data)
             })
             .catch(function(error) {
                 console.log(error)
             })
-    }*/
+    }
 
     render() {
         return (
@@ -44,19 +52,19 @@ export default class View extends Component {
                 <div className="text-center mb-4">
                     <h3>
                     Employee First Name: 
-                    <small class="text-muted">  First Name</small>
+                    <small class="text-muted">  {this.firstName}</small>
                     </h3>
                 </div>
                 <div className="text-center mb-4">
                     <h3>
                     Employee Last Name: 
-                    <small class="text-muted">  Last Name</small>
+                    <small class="text-muted">  {this.lastName}</small>
                     </h3>
                 </div>
                 <div className="text-center mb-4">
                     <h3>
                     Employee Email: 
-                    <small class="text-muted">  Email Id</small>
+                    <small class="text-muted">  {this.emailId}</small>
                     </h3>
                 </div>
                 <div className="text-center">

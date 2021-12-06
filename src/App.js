@@ -51,7 +51,7 @@ class App extends Component {
             <Route path="/add-employee" element={ <Add /> } />
             <Route path="/update-employee/:id" element={ <Update /> } />
             <Route path="/view-employee/:id" element={ <View /> } />
-            <Route path="/delete-employee/" element={ <Delete /> } />
+            <Route path="/delete-employee/:id" element={ <Delete /> } />
           </Routes>
       </div>
     </Router>
